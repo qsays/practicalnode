@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "sh ./test.sh",
-    "start": "if [[ ${NODE_ENV} = production ]]; then ./node_modules/.bin/pm2-docker start -i 0 server.js; else ./node_modules/.bin/pm2-dev server.js; fi"
+    "start": "if [[ ${NODE_ENV} = production ]]; then ./node_modules/.bin/pm2-docker start -i 0 server.js; else ./node_modules/.bin/pm2-dev server.js; fi",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "Azat Mardan",
@@ -15,6 +17,8 @@
     "express": "4.15.2",
     "globalog": "1.0.0",
     "monk": "4.0.0",
-    "pm2": "2.4.6"
-  }
+    "pm2": "2.4.6",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
