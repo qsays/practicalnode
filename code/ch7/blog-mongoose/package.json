@@ -6,10 +6,12 @@
     "start": "make start",
     "seed": "sh ./seed.sh",
     "test": "make test",
-    "st": "standard app.js && standard tests/index.js && standard routes/*"
+    "st": "standard app.js && standard tests/index.js && standard routes/*",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Azat Mardan (http://azat.co/)",
-  "license": "MIT",  
+  "license": "MIT",
   "dependencies": {
     "body-parser": "1.18.2",
     "cookie-parser": "1.4.3",
@@ -22,12 +24,14 @@
     "morgan": "1.9.0",
     "pug": "2.0.0-rc.4",
     "serve-favicon": "2.4.5",
-    "stylus": "0.54.5"
+    "stylus": "0.54.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "expect.js": "0.3.1",
     "mocha": "4.0.1",
     "standard": "10.0.3",
     "superagent": "3.8.0"
-  }
+  },
+  "snyk": true
 }
